@@ -1,14 +1,14 @@
-var express = require('express');
-var db = require('./db');
+const express = require('express');
+const db = require('./db');
 
 // Middleware
-var morgan = require('morgan');
-var parser = require('body-parser');
+const morgan = require('morgan');
+const parser = require('body-parser');
 
 // Router
-var router = require('./routes.js');
+const router = require('./routes.js');
 
-var app = express();
+const app = express();
 module.exports.app = app;
 
 // Set what we are listening on.
