@@ -3,7 +3,7 @@ const db = require('./db');
 
 db.connection.connect((err) => {
   if (err) throw err;
-  
+
   console.log('great succuessssss')
 });
 // Middleware
@@ -22,6 +22,12 @@ app.set('port', 3000);
 // Logging and parsing
 app.use(morgan('dev'));
 app.use(parser.json());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  // next();
+});
+
 
 // Set up our routes
 app.use('/classes', router);
@@ -34,4 +40,3 @@ if (!module.parent) {
   app.listen(app.get('port'));
   console.log('Listening on', app.get('port'));
 }
-
