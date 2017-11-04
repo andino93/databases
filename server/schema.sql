@@ -6,7 +6,7 @@ USE chat;
 
 -- CREATE TABLE messages (
 --    Describe your table here.
-  
+
 -- );
 
 /* Create other tables and define schemas for them here! */
@@ -23,18 +23,18 @@ USE chat;
 -- Primary Storage for messages
 -- ---
 
-DROP TABLE IF EXISTS `Messages`;
-    
-CREATE TABLE `Messages` (
+DROP TABLE IF EXISTS `messages`;
+
+CREATE TABLE `messages` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
-  `text` VARCHAR(200) NOT NULL,
-  `username` VARCHAR(20) NOT NULL,
-  `roomname` VARCHAR(20) NOT NULL,
+  `text` VARCHAR(200),
+  `username` VARCHAR(20),
+  `roomname` VARCHAR(20),
   PRIMARY KEY (`id`)
 ) COMMENT 'Primary Storage for messages';
 
 -- ---
--- Foreign Keys 
+-- Foreign Keys
 -- ---
 
 
@@ -70,7 +70,7 @@ CREATE TABLE `Messages` (
 -- ---
 
 -- DROP TABLE IF EXISTS `Messages`;
-    
+
 -- CREATE TABLE `Messages` (
 --   `id` INTEGER NOT NULL AUTO_INCREMENT,
 --   `text` CHAR(200) NOT NULL,
@@ -81,11 +81,11 @@ CREATE TABLE `Messages` (
 
 -- -- ---
 -- -- Table 'Rooms'
--- -- 
+-- --
 -- -- ---
 
 -- DROP TABLE IF EXISTS `Rooms`;
-    
+
 -- CREATE TABLE `Rooms` (
 --   `RoomID` INTEGER NOT NULL AUTO_INCREMENT,
 --   `roomname` CHAR(20) NOT NULL,
@@ -94,11 +94,11 @@ CREATE TABLE `Messages` (
 
 -- -- ---
 -- -- Table 'User'
--- -- 
+-- --
 -- -- ---
 
 -- DROP TABLE IF EXISTS `User`;
-    
+
 -- CREATE TABLE `User` (
 --   `UserID` INTEGER NOT NULL AUTO_INCREMENT,
 --   `name` CHAR(20) NOT NULL,
@@ -106,7 +106,7 @@ CREATE TABLE `Messages` (
 -- );
 
 -- -- ---
--- -- Foreign Keys 
+-- -- Foreign Keys
 -- -- ---
 
 -- ALTER TABLE `Messages` ADD FOREIGN KEY (UserID) REFERENCES `User` (`UserID`);
