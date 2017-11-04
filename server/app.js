@@ -1,6 +1,11 @@
 const express = require('express');
 const db = require('./db');
 
+db.connection.connect((err) => {
+  if (err) throw err;
+  
+  console.log('great succuessssss')
+});
 // Middleware
 const morgan = require('morgan');
 const parser = require('body-parser');
